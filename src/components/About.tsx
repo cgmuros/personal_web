@@ -39,27 +39,27 @@ export default function About() {
                 />
               ) : (
                 <div className="w-full h-64 flex items-center justify-center text-gray-500 dark:text-gray-400 p-4 text-center">
-                  <p>Guarda tu foto como "profile.jpg" en la carpeta "public/images/"</p>
+                  <p>Guarda tu foto como &quot;profile.jpg&quot; en la carpeta &quot;public/images/&quot;</p>
                 </div>
               )}
             </motion.div>
             
             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
               <p>
-                For over 16 years, I've been immersed in the world of data engineering and analytics, 
+                For over 16 years, I&apos;ve been immersed in the world of data engineering and analytics, 
                 building expertise across diverse industries and technological landscapes. My journey 
                 has been defined by transforming complex data challenges into efficient, scalable solutions 
                 that drive business value.
               </p>
               <p>
-                Throughout my career, I've had the privilege of collaborating with exceptional teams 
+                Throughout my career, I&apos;ve had the privilege of collaborating with exceptional teams 
                 and organizations, each contributing to my professional growth and allowing me to make 
                 meaningful contributions to innovative data projects. From data warehousing to ETL processes 
-                and modern data architectures, I've embraced the evolving data ecosystem.
+                and modern data architectures, I&apos;ve embraced the evolving data ecosystem.
               </p>
               <p>
                 I created this platform to share my expertise, connect with like-minded professionals, 
-                and explore new opportunities. Whether you're looking for a data engineering consultant, 
+                and explore new opportunities. Whether you&apos;re looking for a data engineering consultant, 
                 a collaborator on an exciting project, or simply want to exchange ideas, I welcome you 
                 to reach out through the contact section.
               </p>
