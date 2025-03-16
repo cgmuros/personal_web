@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter, FaStrava } from 'react-icons/fa'
 
 export default function Hero() {
   return (
@@ -13,28 +13,51 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Data Engineer
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Cristian Muñoz Rosenfeld
           </h1>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+            Data Engineer
+          </h2>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
             Transforming Data into Actionable Insights
           </p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-6">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/cgmuros"
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              aria-label="GitHub"
             >
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/cgmuros/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl hover:text-blue-600 transition-colors"
+              aria-label="LinkedIn"
             >
               <FaLinkedin />
+            </a>
+            <a
+              href="https://twitter.com/cgmuros"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-blue-400 transition-colors"
+              aria-label="Twitter/X"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://www.strava.com/athletes/cgmuros"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl hover:text-orange-500 transition-colors"
+              aria-label="Strava"
+            >
+              <FaStrava />
             </a>
           </div>
         </motion.div>

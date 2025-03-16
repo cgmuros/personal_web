@@ -5,23 +5,35 @@ import { motion } from 'framer-motion'
 const skills = [
   {
     category: "Data Engineering",
-    items: ["Apache Spark", "Airflow", "ETL/ELT", "Data Modeling", "SQL"]
+    items: ["Apache Spark", "Airflow", "Databricks", "ETL/ELT", "Data Modeling", "dbt", "Snowflake", "BigQuery", "Redshift"]
+  },
+  {
+    category: "Data Architecture",
+    items: ["Data Warehousing", "Data Lakes", "Data Mesh", "Lakehouse", "Modern Data Stack", "Data Governance"]
   },
   {
     category: "Cloud Platforms",
-    items: ["AWS", "Google Cloud", "Azure", "Snowflake"]
+    items: ["AWS", "Google Cloud", "Azure", "Terraform", "Infrastructure as Code"]
   },
   {
     category: "Programming",
-    items: ["Python", "SQL", "Scala", "Java"]
+    items: ["Python", "SQL", "Scala", "Java", "JavaScript", "TypeScript", "Shell Scripting"]
   },
   {
     category: "Big Data",
-    items: ["Hadoop", "Hive", "Kafka", "Delta Lake"]
+    items: ["Hadoop", "Hive", "Kafka", "Delta Lake", "Iceberg", "Streaming Data"]
   },
   {
-    category: "Tools & Others",
-    items: ["Git", "Docker", "Kubernetes", "CI/CD", "Linux"]
+    category: "DevOps & Tools",
+    items: ["Git", "Docker", "Kubernetes", "CI/CD", "Linux", "Jenkins", "GitHub Actions"]
+  },
+  {
+    category: "Analytics & BI",
+    items: ["Looker", "Tableau", "Power BI", "Data Visualization", "Metrics Definition"]
+  },
+  {
+    category: "Methodologies",
+    items: ["Agile", "Scrum", "Data Mesh", "DataOps", "MLOps"]
   }
 ]
 
