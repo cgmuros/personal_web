@@ -1,180 +1,163 @@
 'use client';
 
-import { motion } from 'framer-motion'
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
-import { useState, FormEvent } from 'react'
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { FaEnvelope } from 'react-icons/fa';
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const t = useTranslations('Contact');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // IMPORTANTE: Reemplaza "YOUR_FORM_ID" con el ID de tu formulario de Formspree
-  // Para obtener un ID:
-  // 1. Ve a https://formspree.io/ y crea una cuenta gratuita
-  // 2. Crea un nuevo formulario
-  // 3. Copia el ID del formulario (algo como "xrgpldwe")
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwplplnp";
-
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validación básica
-    if (!name || !email || !message) {
-      setStatus('error');
-      setErrorMessage('Please complete all fields');
-      return;
-    }
-    
-    setStatus('loading');
-    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name,
-          email,
-          message
-        })
+        body: JSON.stringify(formData),
       });
-      
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.error || 'Error sending message');
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
       }
-      
-      // Éxito
-      setStatus('success');
-      setName('');
-      setEmail('');
-      setMessage('');
-      
-      // Resetear el estado después de 5 segundos
-      setTimeout(() => {
-        setStatus('idle');
-      }, 5000);
-      
     } catch (error) {
-      setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Error sending message');
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
-    <section className="w-full py-20 bg-white dark:bg-gray-800">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
-        >
-          <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+    <section id="contact" className="w-full py-8 md:py-12 bg-black">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-2 text-center mb-8">
+          <div className="space-y-1">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-300 sm:text-3xl">
+              {t('title')}
+            </h2>
+            <p className="mx-auto max-w-[500px] text-gray-500 text-sm">
+              {t('description')}
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Información de contacto */}
+          <div className="space-y-6">
+            <div className="bg-gray-900 p-6 rounded border border-gray-800">
+              <h3 className="text-lg font-mono text-gray-300 mb-4">$ contact_info</h3>
               <div className="space-y-4">
                 <a
                   href="mailto:cgmuros@gmail.com"
-                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+                  className="flex items-center space-x-3 text-gray-400 hover:text-gray-300 transition-colors"
                 >
                   <FaEnvelope className="text-xl" />
-                  <span>cgmuros@gmail.com</span>
-                </a>
-                <a
-                  href="https://github.com/cgmuros"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors"
-                >
-                  <FaGithub className="text-xl" />
-                  <span>GitHub</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/cgmuros/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
-                >
-                  <FaLinkedin className="text-xl" />
-                  <span>LinkedIn</span>
+                  <span className="font-mono">cgmuros@gmail.com</span>
                 </a>
               </div>
             </div>
+          </div>
 
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                />
+          {/* Formulario */}
+          <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-3">
+                <div className="relative">
+                  <div className="flex items-center space-x-1 text-gray-500 mb-0.5">
+                    <span className="font-mono text-sm">$</span>
+                    <span className="animate-pulse text-sm">_</span>
+                  </div>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder={t('namePlaceholder')}
+                    className="w-full px-3 py-1.5 bg-gray-900 border border-gray-800 rounded text-gray-300 text-sm font-mono focus:outline-none focus:ring-1 focus:ring-gray-700"
+                    required
+                  />
+                </div>
+                <div className="relative">
+                  <div className="flex items-center space-x-1 text-gray-500 mb-0.5">
+                    <span className="font-mono text-sm">$</span>
+                    <span className="animate-pulse text-sm">_</span>
+                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder={t('emailPlaceholder')}
+                    className="w-full px-3 py-1.5 bg-gray-900 border border-gray-800 rounded text-gray-300 text-sm font-mono focus:outline-none focus:ring-1 focus:ring-gray-700"
+                    required
+                  />
+                </div>
+                <div className="relative">
+                  <div className="flex items-center space-x-1 text-gray-500 mb-0.5">
+                    <span className="font-mono text-sm">$</span>
+                    <span className="animate-pulse text-sm">_</span>
+                  </div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder={t('messagePlaceholder')}
+                    className="w-full px-3 py-1.5 bg-gray-900 border border-gray-800 rounded text-gray-300 text-sm font-mono focus:outline-none focus:ring-1 focus:ring-gray-700 min-h-[100px]"
+                    required
+                  />
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                ></textarea>
-              </div>
-              
-              {status === 'error' && (
-                <div className="text-red-500 text-sm">{errorMessage}</div>
-              )}
-              
-              {status === 'success' && (
-                <div className="text-green-500 text-sm">Message sent successfully!</div>
-              )}
-              
               <button
                 type="submit"
-                disabled={status === 'loading'}
-                className={`w-full py-2 px-6 rounded-md transition-colors ${
-                  status === 'loading' 
-                    ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-blue-500 hover:bg-blue-600 text-white'
-                }`}
+                disabled={isSubmitting}
+                className="w-full px-3 py-1.5 bg-gray-800 text-gray-300 font-mono text-sm rounded hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center">
+                    <span className="animate-spin mr-1">⌛</span>
+                    {t('sending')}
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center">
+                    <span className="mr-1">$</span>
+                    {t('send')}
+                  </span>
+                )}
               </button>
             </form>
+            {submitStatus === 'success' && (
+              <div className="p-3 bg-gray-900 text-gray-300 font-mono text-sm rounded border border-gray-800">
+                <span className="mr-1">✓</span>
+                {t('success')}
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="p-3 bg-gray-900 text-gray-300 font-mono text-sm rounded border border-gray-800">
+                <span className="mr-1">✗</span>
+                {t('error')}
+              </div>
+            )}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
-  )
+  );
 } 

@@ -1,0 +1,32 @@
+{
+  "Hero": {
+    "title": "Sr. Data Engineer",
+    "subtitle": "Transforming Data into Actionable Insights"
+  },
+  "About": {
+    "title": "About Me",
+    "description1": "For over 16 years, I've been immersed in the world of data engineering and analytics, building expertise across diverse industries and technological landscapes. My journey has been defined by transforming complex data challenges into efficient, scalable solutions that drive business value.",
+    "description2": "Throughout my career, I've had the privilege of collaborating with exceptional teams and organizations, each contributing to my professional growth and allowing me to make meaningful contributions to innovative data projects. From data warehousing to ETL processes and modern data architectures, I've embraced the evolving data ecosystem.",
+    "description3": "I created this platform to share my expertise, connect with like-minded professionals, and explore new opportunities. Whether you're looking for a data engineering consultant, a collaborator on an exciting project, or simply want to exchange ideas, I welcome you to reach out through the contact section."
+  },
+  "Navigation": {
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "Contact": {
+    "title": "Contact Me",
+    "description": "Send me a message and I'll get back to you as soon as possible.",
+    "namePlaceholder": "Enter your name...",
+    "emailPlaceholder": "Enter your email...",
+    "messagePlaceholder": "Type your message here...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+  "TechnicalSkills": {
+    "title": "Technical Skills",
+    "description": "A comprehensive overview of my technical expertise and capabilities"
+  }
+} 

@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaTwitter, FaStrava } from 'react-icons/fa'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+
   return (
     <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-800">
       <div className="container mx-auto px-4 py-16">
@@ -17,10 +20,10 @@ export default function Hero() {
             Cristian Muñoz Rosenfeld
           </h1>
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Data Engineer
+            {t('title')}
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Transforming Data into Actionable Insights
+            {t('subtitle')}
           </p>
           <div className="flex justify-center space-x-6">
             <a

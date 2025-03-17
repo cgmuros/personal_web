@@ -1,0 +1,32 @@
+{
+  "Hero": {
+    "title": "Ingeniero Sr. de Datos",
+    "subtitle": "Transformando Datos en Información Accionable"
+  },
+  "About": {
+    "title": "Sobre Mí",
+    "description1": "Durante más de 16 años, he estado inmerso en el mundo de la ingeniería y análisis de datos, desarrollando experiencia en diversas industrias y panoramas tecnológicos. Mi trayectoria se ha definido por transformar desafíos complejos de datos en soluciones eficientes y escalables que impulsan el valor empresarial.",
+    "description2": "A lo largo de mi carrera, he tenido el privilegio de colaborar con equipos y organizaciones excepcionales, cada uno contribuyendo a mi crecimiento profesional y permitiéndome hacer contribuciones significativas a proyectos innovadores de datos. Desde data warehousing hasta procesos ETL y arquitecturas modernas de datos, he adoptado el ecosistema evolutivo de datos.",
+    "description3": "Creé esta plataforma para compartir mi experiencia, conectar con profesionales afines y explorar nuevas oportunidades. Ya sea que estés buscando un consultor de ingeniería de datos, un colaborador para un proyecto emocionante o simplemente quieras intercambiar ideas, te invito a contactarme a través de la sección de contacto."
+  },
+  "Navigation": {
+    "language": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "Contact": {
+    "title": "Contáctame",
+    "description": "Envíame un mensaje y te responderé lo antes posible.",
+    "namePlaceholder": "Ingresa tu nombre...",
+    "emailPlaceholder": "Ingresa tu email...",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Por favor, intenta de nuevo."
+  },
+  "TechnicalSkills": {
+    "title": "Habilidades Técnicas",
+    "description": "Una visión general completa de mi experiencia técnica y capacidades"
+  }
+} 

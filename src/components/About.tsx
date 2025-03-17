@@ -3,9 +3,11 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 export default function About() {
   const [imageError, setImageError] = useState(false);
+  const t = useTranslations('About');
 
   return (
     <section className="w-full py-20 bg-white dark:bg-gray-800">
@@ -17,7 +19,7 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-10 text-center">About Me</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center">{t('title')}</h2>
           
           <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
             <motion.div 
@@ -25,18 +27,21 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="w-64 relative rounded-lg overflow-hidden shadow-xl flex-shrink-0 bg-gray-200 dark:bg-gray-700"
+              className="w-64 relative rounded-2xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] transition-shadow duration-300 flex-shrink-0 bg-gradient-to-b from-blue-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 p-2"
             >
               {!imageError ? (
-                <Image
-                  src="/images/profile.jpg"
-                  alt="Cristian Muñoz Rosenfeld"
-                  width={300}
-                  height={400}
-                  className="object-contain w-full"
-                  priority
-                  onError={() => setImageError(true)}
-                />
+                <div className="relative rounded-xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 z-10"></div>
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Cristian Muñoz Rosenfeld"
+                    width={300}
+                    height={400}
+                    className="object-cover w-full hover:scale-105 transition-transform duration-300 rounded-xl"
+                    priority
+                    onError={() => setImageError(true)}
+                  />
+                </div>
               ) : (
                 <div className="w-full h-64 flex items-center justify-center text-gray-500 dark:text-gray-400 p-4 text-center">
                   <p>Guarda tu foto como &quot;profile.jpg&quot; en la carpeta &quot;public/images/&quot;</p>
@@ -45,24 +50,9 @@ export default function About() {
             </motion.div>
             
             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
-              <p>
-                For over 16 years, I&apos;ve been immersed in the world of data engineering and analytics, 
-                building expertise across diverse industries and technological landscapes. My journey 
-                has been defined by transforming complex data challenges into efficient, scalable solutions 
-                that drive business value.
-              </p>
-              <p>
-                Throughout my career, I&apos;ve had the privilege of collaborating with exceptional teams 
-                and organizations, each contributing to my professional growth and allowing me to make 
-                meaningful contributions to innovative data projects. From data warehousing to ETL processes 
-                and modern data architectures, I&apos;ve embraced the evolving data ecosystem.
-              </p>
-              <p>
-                I created this platform to share my expertise, connect with like-minded professionals, 
-                and explore new opportunities. Whether you&apos;re looking for a data engineering consultant, 
-                a collaborator on an exciting project, or simply want to exchange ideas, I welcome you 
-                to reach out through the contact section.
-              </p>
+              <p>{t('description1')}</p>
+              <p>{t('description2')}</p>
+              <p>{t('description3')}</p>
             </div>
           </div>
         </motion.div>
