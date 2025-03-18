@@ -1,9 +1,7 @@
 {
   "Hero": {
-    "title": "Hola, soy Cristian",
-    "subtitle": "Ingeniero de Datos Senior",
-    "description": "Construyo infraestructuras y pipelines de datos robustos que transforman datos en información valiosa.",
-    "contactBtn": "Contáctame"
+    "title": "Ingeniero Sr. de Datos",
+    "subtitle": "Transformando Datos en Información Accionable"
   },
   "About": {
     "title": "Sobre Mí",

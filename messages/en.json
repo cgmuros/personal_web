@@ -1,9 +1,7 @@
 {
   "Hero": {
-    "title": "Hi, I'm Cristian",
-    "subtitle": "Senior Data Engineer",
-    "description": "I build robust data infrastructures and pipelines that transform data into valuable insights.",
-    "contactBtn": "Get in touch"
+    "title": "Sr. Data Engineer",
+    "subtitle": "Transforming Data into Actionable Insights"
   },
   "About": {
     "title": "About Me",
