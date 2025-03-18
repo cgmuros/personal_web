@@ -41,8 +41,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="min-h-screen">
             <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-              <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                <div className="w-20"></div>
+              <div className="container mx-auto px-4 h-16 flex items-center justify-center">
                 <div className="flex items-center space-x-6 text-sm">
                   <div className="flex items-center">
                     <span className="text-blue-500 font-medium">+15</span>
@@ -57,7 +56,9 @@ export default async function RootLayout({
                     <span className="ml-2 text-gray-600 dark:text-gray-400">Data Architect</span>
                   </div>
                 </div>
-                <LanguageSelector />
+                <div className="absolute right-4">
+                  <LanguageSelector />
+                </div>
               </div>
             </header>
             <main className="pt-16">

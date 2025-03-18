@@ -1,7 +1,9 @@
 {
   "Hero": {
-    "title": "Ingeniero Sr. de Datos",
-    "subtitle": "Transformando Datos en Información Accionable"
+    "title": "Hola, soy Cristian",
+    "subtitle": "Ingeniero de Datos Senior",
+    "description": "Construyo infraestructuras y pipelines de datos robustos que transforman datos en información valiosa.",
+    "contactBtn": "Contáctame"
   },
   "About": {
     "title": "Sobre Mí",
@@ -9,10 +11,8 @@
     "description2": "A lo largo de mi carrera, he tenido el privilegio de colaborar con equipos y organizaciones excepcionales, cada uno contribuyendo a mi crecimiento profesional y permitiéndome hacer contribuciones significativas a proyectos innovadores de datos. Desde data warehousing hasta procesos ETL y arquitecturas modernas de datos, he adoptado el ecosistema evolutivo de datos.",
     "description3": "Creé esta plataforma para compartir mi experiencia, conectar con profesionales afines y explorar nuevas oportunidades. Ya sea que estés buscando un consultor de ingeniería de datos, un colaborador para un proyecto emocionante o simplemente quieras intercambiar ideas, te invito a contactarme a través de la sección de contacto."
   },
-  "Navigation": {
-    "language": "Idioma",
-    "english": "Inglés",
-    "spanish": "Español"
+  "Skills": {
+    "title": "Habilidades Técnicas"
   },
   "Contact": {
     "title": "Contáctame",
@@ -25,8 +25,8 @@
     "success": "¡Mensaje enviado con éxito!",
     "error": "Error al enviar el mensaje. Por favor, intenta de nuevo."
   },
-  "TechnicalSkills": {
-    "title": "Habilidades Técnicas",
-    "description": "Una visión general completa de mi experiencia técnica y capacidades"
+  "LanguageSelector": {
+    "english": "Inglés",
+    "spanish": "Español"
   }
 } 
