@@ -15,6 +15,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Cristian Muñoz - Sr. Data Engineer",
   description: "Portfolio of Cristian Muñoz, Senior Data Engineer with over 16 years of experience in data engineering and analytics.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 };
 
 export default async function RootLayout({
@@ -37,6 +43,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={inter.className}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      </head>
       <body className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="min-h-screen">
