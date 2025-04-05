@@ -54,7 +54,7 @@ export default function Hero() {
               <FaTwitter />
             </a>
             <a
-              href="https://www.strava.com/athletes/cgmuros"
+              href="https://www.strava.com/athletes/49921501"
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl hover:text-orange-500 transition-colors"
