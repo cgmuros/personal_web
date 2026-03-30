@@ -1,30 +1,197 @@
 {
-  "Hero": {
-    "title": "Sr. Data Engineer",
-    "subtitle": "Transforming Data into Actionable Insights"
-  },
-  "About": {
-    "title": "About Me",
-    "description1": "For over 16 years, I've been immersed in the world of data engineering and analytics, building expertise across diverse industries and technological landscapes. My journey has been defined by transforming complex data challenges into efficient, scalable solutions that drive business value.",
-    "description2": "Throughout my career, I've had the privilege of collaborating with exceptional teams and organizations, each contributing to my professional growth and allowing me to make meaningful contributions to innovative data projects. From data warehousing to ETL processes and modern data architectures, I've embraced the evolving data ecosystem.",
-    "description3": "I created this platform to share my expertise, connect with like-minded professionals, and explore new opportunities. Whether you're looking for a data engineering consultant, a collaborator on an exciting project, or simply want to exchange ideas, I welcome you to reach out through the contact section."
-  },
-  "Skills": {
-    "title": "Technical Skills"
-  },
-  "Contact": {
-    "title": "Contact Me",
-    "description": "Send me a message and I'll get back to you as soon as possible.",
-    "namePlaceholder": "Enter your name...",
-    "emailPlaceholder": "Enter your email...",
-    "messagePlaceholder": "Type your message here...",
-    "send": "Send Message",
-    "sending": "Sending...",
-    "success": "Message sent successfully!",
-    "error": "Error sending message. Please try again."
+  "Navigation": {
+    "about": "About",
+    "skills": "Stack",
+    "contact": "Contact",
+    "cta": "Let's talk",
+    "role": "Data Engineer / Data Architect"
   },
   "LanguageSelector": {
-    "english": "English",
-    "spanish": "Spanish"
+    "english": "EN",
+    "spanish": "ES"
+  },
+  "Hero": {
+    "eyebrow": "Senior data engineering and architecture",
+    "title": "I design modern data platforms that turn complex migrations into reliable delivery systems.",
+    "subtitle": "Experienced Computer Engineer specialized in lakehouse architecture, Snowflake ecosystems, Databricks pipelines and legacy-to-cloud modernization across AWS and Azure.",
+    "primaryCta": "Start a conversation",
+    "availability": "Available for consulting, architecture and delivery leadership",
+    "languages": "Spanish native · Advanced English",
+    "platformFocus": "Platform focus",
+    "imageEyebrow": "Lakehouse delivery playbook",
+    "imageCaption": "Modernization mindset across batch, streaming, migration validation, orchestration and cloud-native execution.",
+    "metrics": [
+      {
+        "value": "16+",
+        "label": "years working across engineering, analytics and modern data platforms"
+      },
+      {
+        "value": "AWS · Azure",
+        "label": "cloud environments used to modernize legacy ecosystems and operational pipelines"
+      },
+      {
+        "value": "Batch + Real time",
+        "label": "experience building reliable pipelines with Spark, Kafka, Snowflake and Databricks"
+      }
+    ]
+  },
+  "About": {
+    "eyebrow": "Professional overview",
+    "title": "Architecture with delivery discipline.",
+    "intro": "I combine hands-on engineering with architecture thinking, helping teams modernize data ecosystems without losing control of quality, standards or execution speed.",
+    "description1": "My background includes Data Lakehouse implementations, Hadoop and database migrations, cloud-native ETL and ELT, and scalable pipelines built with Python, PySpark, Snowflake, Databricks, Glue, Kafka and Airflow.",
+    "description2": "I work comfortably between strategy and execution: defining zones, standards, orchestration models, validation frameworks and release practices that keep data platforms maintainable as they scale.",
+    "flowEyebrow": "Modernization flow",
+    "flowTitle": "Legacy data into cloud-native delivery.",
+    "badges": [
+      "Data Lakehouse",
+      "Migration Architecture",
+      "Snowflake",
+      "Databricks",
+      "Apache Spark",
+      "Kafka",
+      "AWS",
+      "Azure"
+    ],
+    "focus": [
+      {
+        "title": "Modernization roadmaps",
+        "description": "From Hadoop, BigQuery, SQL Server or Teradata into modern stacks that reduce operational friction and improve scalability."
+      },
+      {
+        "title": "Platform standards",
+        "description": "Definition of landing, staging and trusted zones, pipeline best practices, validation flows and engineering conventions for growing teams."
+      },
+      {
+        "title": "Reliable delivery",
+        "description": "Automation using Docker, CI/CD, Git workflows, orchestration tools and testing-oriented approaches to keep releases predictable."
+      }
+    ],
+    "flowCards": [
+      {
+        "title": "Sources",
+        "description": "Hadoop, SQL Server, BigQuery, APIs and Kafka"
+      },
+      {
+        "title": "Ingestion + Validation",
+        "description": "Glue, Spark, DLT, QA frameworks and schema checks"
+      },
+      {
+        "title": "Lakehouse Core",
+        "description": "Databricks, Delta Lake, zones, standards and orchestration"
+      },
+      {
+        "title": "Serving Layer",
+        "description": "Snowflake, warehousing, analytics consumption and scalable access"
+      }
+    ]
+  },
+  "Skills": {
+    "eyebrow": "Technical capabilities",
+    "title": "A stack built for platform work, not just isolated pipelines.",
+    "description": "My strongest value is connecting architecture, implementation and operational quality across the data lifecycle.",
+    "streamEyebrow": "Live Tech Stream",
+    "streamTitle": "The stack moves like the platform itself.",
+    "streamDescription": "Multiple streams, different speeds, and hover-driven motion to make the technology layer feel active instead of static.",
+    "groups": [
+      {
+        "title": "Engineering",
+        "items": [
+          "Python",
+          "SQL",
+          "PySpark",
+          "FastAPI",
+          "Unix scripting",
+          "Docker"
+        ]
+      },
+      {
+        "title": "Data platforms",
+        "items": [
+          "Snowflake",
+          "Databricks",
+          "Delta Lake",
+          "DLT",
+          "Lakehouse Federation",
+          "Data Catalog"
+        ]
+      },
+      {
+        "title": "Cloud and orchestration",
+        "items": [
+          "AWS Glue",
+          "Step Functions",
+          "Athena",
+          "EMR",
+          "Lambda",
+          "Airflow",
+          "Prefect"
+        ]
+      },
+      {
+        "title": "Streaming and storage",
+        "items": [
+          "Kafka",
+          "KSQLDB",
+          "Hadoop",
+          "Hive",
+          "PostgreSQL",
+          "SQL Server",
+          "MongoDB"
+        ]
+      }
+    ],
+    "toolbelt": [
+      "Snowflake",
+      "Databricks",
+      "Delta Lake",
+      "Apache Spark",
+      "Kafka",
+      "AWS",
+      "Azure",
+      "Glue",
+      "Athena",
+      "EMR",
+      "DBT",
+      "Docker",
+      "Gitflow",
+      "CI/CD",
+      "Lakehouse",
+      "Data Warehousing",
+      "Airbyte",
+      "Keboola"
+    ]
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "If you need migration leadership, platform architecture or senior delivery support, let's connect through WhatsApp.",
+    "description": "WhatsApp is the primary contact channel here. You can also use the links below for direct contact.",
+    "whatsappTitle": "Primary channel",
+    "whatsappText": "Talk to me directly on WhatsApp",
+    "whatsappCta": "Open chat",
+    "whatsappHref": "https://wa.me/56984031210?text=Hi%20Cristian%2C%20I'd%20like%20to%20talk%20about%20a%20data%20opportunity%20or%20project.",
+    "contactNote": "If you prefer, you can still reach me by email, phone, LinkedIn or my public website.",
+    "channels": [
+      {
+        "title": "Email",
+        "value": "cgmuros@gmail.com",
+        "href": "mailto:cgmuros@gmail.com"
+      },
+      {
+        "title": "Phone",
+        "value": "+56 9 84031210",
+        "href": "tel:+56984031210"
+      },
+      {
+        "title": "LinkedIn",
+        "value": "linkedin.com/in/cgmuros",
+        "href": "https://www.linkedin.com/in/cgmuros/"
+      },
+      {
+        "title": "Website",
+        "value": "cgmuros.is-a.dev",
+        "href": "http://cgmuros.is-a.dev/"
+      }
+    ]
   }
-} 
+}
