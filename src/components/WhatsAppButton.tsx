@@ -1,10 +1,15 @@
 'use client';
 
+import { useLocale } from 'next-intl';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function WhatsAppButton() {
+  const locale = useLocale();
   const phoneNumber = "56984031210";
-  const message = "Hola, me gustaría contactarte";
+  const message =
+    locale === 'es'
+      ? "Hola Cristian, me gustaría conversar sobre una oportunidad o proyecto de datos."
+      : "Hi Cristian, I'd like to talk about a data opportunity or project.";
 
   return (
     <a
